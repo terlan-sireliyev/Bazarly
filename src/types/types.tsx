@@ -1,7 +1,8 @@
-import type { ReactNode } from "react";
+import type { ElementType } from "react";
+
 export interface Category {
   name: string;
   color: string;
-  icon: ReactNode;
+  icon: ElementType; // React component tipi
   sub: string[];
 }

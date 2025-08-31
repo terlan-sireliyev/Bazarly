@@ -1,5 +1,6 @@
 import type { Category } from "../../../types/types";
 
+
 interface CategoryModalProps {
   categories: Category[];
   onSelect: (category: Category) => void;
