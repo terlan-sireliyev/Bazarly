@@ -8,14 +8,13 @@ import UserModal from "./components/UserModal";
 const NavbarUserActions = () => {
   const width = useWindowWidth();
   const isVisible = width > 810;
-  const isVisibleTwo = width > 500;
+  const isVisibleTwo = width > 600;
 
   const [isUserOpen, setIsUserOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   return (
-    // <div className={`${!isVisible ? "hidden" : "flex"} items-center space-x-4`}>
-    <div className={` flex items-center space-x-4`}>
+    <div className={` flex items-center gap-4`}>
       {/* Divider */}
       <div className={`${!isVisible ? "hidden" : "flex"} h-6 w-px bg-gray-300`}></div>
 

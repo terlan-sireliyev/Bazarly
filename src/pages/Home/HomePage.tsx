@@ -4,7 +4,7 @@ import Categories from "../../features/Categories/components/Categories";
 
 const HomePage = () => {
   return (
-    <main className="max-w-7xl mx-auto px-6 ">
+    <main className="max-w-7xl mx-auto  px-6 sm:px-2">
       <Categories />
       <div
         className="
