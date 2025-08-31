@@ -7,7 +7,7 @@ interface CategoryModalProps {
 }
 
 const CategoriesGrid = ({ categories, onSelect }: CategoryModalProps) => (
-  <div className="  py-6 my-4 rounded">
+  <div className="    my-4 rounded">
     <div className="max-w-7xl mx-auto    ">
       <div className="grid grid-cols-3 max-[450px]:grid-cols-4 sm:grid-cols-3 md:grid-cols-6 gap-3 sm:gap-5">
         {categories?.map((cat, idx) => (
