@@ -8,7 +8,7 @@ import UserModal from "./components/UserModal";
 const NavbarUserActions = () => {
   const width = useWindowWidth();
   const isVisible = width > 810;
-  const isVisibleTwo = width > 600;
+  const isVisibleTwo = width > 700;
 
   const [isUserOpen, setIsUserOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
