@@ -1,7 +1,7 @@
-// utils/types.tsx → utils/types.tsx
+import type { ReactNode } from "react";
 export interface Category {
   name: string;
   color: string;
-  icon: JSX.Element;
+  icon: ReactNode;
   sub: string[];
 }
