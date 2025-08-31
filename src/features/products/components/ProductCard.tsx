@@ -55,7 +55,7 @@ const ProductCard = ({
       </div>
 
       {/* Mətn hissəsi */}
-      <div className="p-5 flex flex-col gap-3 flex-1">
+      <div className="pt-5 pb-0 flex flex-col gap-[5px] flex-1">
         {/* Kateqoriya */}
         <p className="text-gray-400 text-sm">{category}</p>
 
@@ -96,7 +96,7 @@ const ProductCard = ({
         </div>
 
         {/* Qiymət və düymə */}
-        <div className="flex justify-between max-[900px]:flex-col items-center mt-auto max-md:flex-col max-md:gap-3 max-[900px]:gap-2 max-md:w-full">
+        <div className="flex justify-between max-[900px]:flex-col items-center mt-4 max-md:flex-col max-md:gap-3 max-[900px]:gap-2 max-md:w-full">
           <span className="bg-red-100 text-red-600 font-bold py-2 px-4 rounded-xl max-md:w-full max-md:text-center max-[900px]:w-full">
             {price} ₼
           </span>

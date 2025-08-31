@@ -13,7 +13,7 @@ const HomePage = () => {
     sm:grid-cols-3           /* 640px və yuxarı → 2 sütun */
     md:grid-cols-3           /* 768px və yuxarı → 3 sütun */
     xl:grid-cols-4           /* 1280px və yuxarı → 4 sütun */
-    gap-4
+    sm:gap-2
   "
       >
         {products.map((item, index) => (
