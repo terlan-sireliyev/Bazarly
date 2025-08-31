@@ -16,7 +16,7 @@ import useWindowWidth from "../../../hooks/useWindowWidth";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  //Add navbar
   const width = useWindowWidth();
   const isVisible = width > 810;
 
