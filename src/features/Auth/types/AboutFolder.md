@@ -1,0 +1,1 @@
+# yalnız auth-a aid TS type-lar
