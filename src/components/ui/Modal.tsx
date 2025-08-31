@@ -26,8 +26,6 @@ const Modal: React.FC<ModalProps> = ({
         >
           <motion.div
             className="bg-white rounded-2xl shadow-2xl max-h-[90vh] overflow-y-auto  p-4 max-sm:mx-2  mx-4 sm:mx-12"
-            // className="bg-white rounded-2xl shadow-2xl max-sm:rounded-none  p-4 max-sm:p-5 max-sm:mx-0 mx-4 sm:mx-6"
-
             style={{ width }}
             initial={{ opacity: 0, scale: 0.6, y: 80 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}

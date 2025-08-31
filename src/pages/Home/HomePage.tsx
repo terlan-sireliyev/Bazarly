@@ -8,31 +8,30 @@ const HomePage = () => {
       <Categories />
   <div
   className="
-    grid
-    grid-cols-2  
-    max-sm:grid-cols-1             /* default: ən kiçik ekranlarda ( <800px ) → 2 sütun */
-    min-[820px]:grid-cols-3  /* 730px və yuxarı → 3 sütun */
-    min-[850px]:grid-cols-3  /* 800px və yuxarı → 3 sütun */
-    min-[1250px]:grid-cols-4 /* 1250px və yuxarı → 4 sütun */
-    gap-2
+    grid 
+    grid-cols-1              /* ən kiçik ekranlarda → 1 sütun */
+    sm:grid-cols-2           /* 640px və yuxarı → 2 sütun */
+    md:grid-cols-3           /* 768px və yuxarı → 3 sütun */
+    xl:grid-cols-4           /* 1280px və yuxarı → 4 sütun */
+    gap-4
   "
 >
-         
-        {products.map((item, index) => (
-          <ProductCard
-            key={index}
-            category={item.category}
-            title={item.name}
-            image={item.image}
-            location={`${item.city}`}
-            date={item.date}
-            time={item.time}
-            user={item.user}
-            condition={item.condition}
-            price={item.price}
-          />
-        ))}
-      </div>
+  {products.map((item, index) => (
+    <ProductCard
+      key={index}
+      category={item.category}
+      title={item.name}
+      image={item.image}
+      location={`${item.city}`}
+      date={item.date}
+      time={item.time}
+      user={item.user}
+      condition={item.condition}
+      price={item.price}
+    />
+  ))}
+</div>
+
     </main>
   );
 };
