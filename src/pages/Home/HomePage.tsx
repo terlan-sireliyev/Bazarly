@@ -3,6 +3,7 @@ import { products } from "../../utils/productList";
 import Categories from "../../features/Categories/components/Categories";
 
 const HomePage = () => {
+  //sadsad
   return (
     <main className="max-w-7xl mx-auto px-6 ">
       <Categories />
