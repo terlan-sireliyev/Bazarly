@@ -45,34 +45,26 @@ const CategoriesGrid: React.FC<CategoryModalProps> = ({
   categories,
   onSelect,
 }) => {
-  const settings = {
-    dots: false,
-    infinite: false,
-    speed: 500,
-    adaptiveHeight: true,
-    swipeToSlide: true, // better touch support
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    slidesToScroll: 1,
-    slidesToShow: 6, // Desktop default
-    responsive: [
-      {
-        breakpoint: 1280, // ≤1279px → tablet
-        settings: {
-          slidesToShow: 5,
-        },
-      },
-      {
-        breakpoint: 640, // ≤639px → mobile
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-    ],
-  };
+const settings = {
+  dots: false,
+  infinite: false,
+  speed: 500,
+  adaptiveHeight: true,
+  swipeToSlide: true,
+  slidesToScroll: 1,
+  slidesToShow: 6, // desktop
+  nextArrow: <NextArrow />,
+  prevArrow: <PrevArrow />,
+  responsive: [
+    { breakpoint: 1280, settings: { slidesToShow: 5 } }, // tablet
+    { breakpoint: 1024, settings: { slidesToShow: 4 } }, // small tablet
+    { breakpoint: 640, settings: { slidesToShow: 3 } },  // mobile
+  ],
+};
+
 
   return (
-    <div className="my-4 rounded max-w-7xl mx-auto relative overflow-visible">
+<div className="my-4 rounded w-full mx-auto relative overflow-visible">
       <Slider {...settings}>
         {categories?.map((cat, idx) => (
           <div
