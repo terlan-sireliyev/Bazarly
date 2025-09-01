@@ -45,7 +45,7 @@ const CategoriesGrid = ({ categories, onSelect }: CategoryModalProps) => {
     prevArrow: <PrevArrow />,
     responsive: [
       {
-        breakpoint: 900,
+        breakpoint: 1100,
         settings: {
           
           slidesToShow: 5,
