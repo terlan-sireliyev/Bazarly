@@ -41,7 +41,10 @@ interface CategoryModalProps {
   onSelect: (category: Category) => void;
 }
 
-const CategoriesGrid: React.FC<CategoryModalProps> = ({ categories, onSelect }) => {
+const CategoriesGrid: React.FC<CategoryModalProps> = ({
+  categories,
+  onSelect,
+}) => {
   const settings = {
     dots: false,
     infinite: false,
@@ -54,31 +57,31 @@ const CategoriesGrid: React.FC<CategoryModalProps> = ({ categories, onSelect }) 
     slidesToShow: 6, // Desktop default
     responsive: [
       {
-      breakpoint: 1280, // ≤1279px → tablet
-      settings: {
-        slidesToShow: 5,
+        breakpoint: 1280, // ≤1279px → tablet
+        settings: {
+          slidesToShow: 5,
+        },
       },
-    },
-    {
-      breakpoint: 640, // ≤639px → mobile
-      settings: {
-        slidesToShow: 3,
+      {
+        breakpoint: 640, // ≤639px → mobile
+        settings: {
+          slidesToShow: 3,
+        },
       },
-    },
     ],
   };
 
   return (
     <div className="my-4 rounded max-w-7xl mx-auto relative overflow-visible">
       <Slider {...settings}>
-        {categories?.map((cat) => (
+        {categories?.map((cat, idx) => (
           <div
-            key={cat.id} // use unique ID
+            key={idx} // use index instead of id
             className={`
-              ${cat.color} flex flex-col items-center justify-center
-              text-center h-28 rounded-2xl shadow-md hover:shadow-xl hover:scale-105
-              transition transform cursor-pointer
-            `}
+      ${cat.color} flex flex-col items-center justify-center
+      text-center h-28 rounded-2xl shadow-md hover:shadow-xl hover:scale-105
+      transition transform cursor-pointer
+    `}
             onClick={() => onSelect(cat)}
           >
             <cat.icon className="text-3xl md:text-4xl text-gray-800" />
