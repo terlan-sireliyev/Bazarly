@@ -9,7 +9,7 @@ export const categories = [
   { 
     name: "Elektronika", 
     icon: FaMobileAlt,
-    color: "bg-red-100",
+    color: "bg-red-100 " ,
     sub: ["Telefonlar", "Komputerlər", "Televizorlar", "Audio", "Planşetlər", "Laptoplar"]
   },
   { 

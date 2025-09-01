@@ -3,3 +3,8 @@
   display: flex!important;
   gap: 15px!important;
 }
+
+.slick-slide >div>div{
+      display: flex!important;
+    justify-content: center!important;
+}
