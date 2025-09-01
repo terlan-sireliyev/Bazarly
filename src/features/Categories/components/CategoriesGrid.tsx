@@ -10,7 +10,7 @@ const CategoriesGrid = ({ categories, onSelect }: CategoryModalProps) => (
     <div
       className="
         max-w-7xl mx-auto relative 
-        overflow-x-auto max-sm:hide-scrollbar max-md:custom-scrollbar
+        overflow-x-auto sm:hide-scrollbar  max-md:custom-scrollbar
         pt-[10px] pb-[10px]
       "
     >
