@@ -1,48 +1,67 @@
+import Slider from "react-slick";
 import type { Category } from "../../../types/types";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 interface CategoryModalProps {
   categories: Category[];
   onSelect: (category: Category) => void;
 }
 
-const CategoriesGrid = ({ categories, onSelect }: CategoryModalProps) => (
-  <div className="my-4 rounded">
-    <div
-      className="
-        max-w-7xl mx-auto relative 
-        overflow-x-auto max-lg:hide-scrollbar  max-md:custom-scrollbar
-        pt-[10px] pb-[10px]
-      "
-    >
-      <div className="grid grid-cols-3 grid-rows-2 grid-flow-col gap-4 min-w-max
-                      max-[450px]:grid-cols-4 sm:grid-cols-3 md:grid-cols-6
-                      gap-3 sm:gap-5">
+const CategoriesGrid = ({ categories, onSelect }: CategoryModalProps) => {
+  const settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 6,       // Desktop
+    slidesToScroll: 1,
+    adaptiveHeight: true,
+    responsive: [
+      {
+        breakpoint: 1024, // Planşet
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          arrows: false,
+          swipeToSlide: true,
+        },
+      },
+      {
+        breakpoint: 640, // Mobil
+        settings: {
+          slidesToShow: 4, // 4 card hər sıra
+          slidesToScroll: 1,
+          arrows: false,
+          swipeToSlide: true,
+        },
+      },
+    ],
+  };
+
+  return (
+    <div className="my-4 rounded max-w-7xl mx-auto">
+      <Slider {...settings}>
         {categories?.map((cat, idx) => (
           <div
             key={idx}
-            className={`${cat.color} flex flex-col items-center justify-center
-                        h-28 rounded-2xl shadow-md hover:shadow-xl hover:scale-105 
-                        transition transform cursor-pointer 
-                        max-[450px]:h-20 max-[450px]:rounded-lg p-2`}
+            className={`
+              ${cat.color} flex flex-col items-center justify-center
+              h-28 rounded-2xl shadow-md hover:shadow-xl hover:scale-105
+              transition transform cursor-pointer p-2
+              sm:w-[22%]  // Mobil üçün width-i % ilə veririk
+              md:w-auto
+            `}
             onClick={() => onSelect(cat)}
           >
-            {/* Icon */}
-            <cat.icon
-              className="text-3xl md:text-4xl mt-3 max-[450px]:mt-2 max-[650px]:mt-5 
-                         text-gray-800 max-[450px]:text-xl"
-            />
-
-            {/* Text */}
-            <span className="mt-2 text-sm sm:text-lg max-[510px]:text-[16px] md:text-lg 
-                             font-semibold text-gray-700 text-center px-1 
-                             max-[450px]:text-xs leading-tight">
+            <cat.icon className="text-3xl md:text-4xl mt-3 text-gray-800" />
+            <span className="mt-2 text-sm sm:text-lg font-semibold text-gray-700 text-center px-1 leading-tight">
               {cat.name}
             </span>
           </div>
         ))}
-      </div>
+      </Slider>
     </div>
-  </div>
-);
+  );
+};
 
 export default CategoriesGrid;
