@@ -37,16 +37,19 @@ interface CategoryModalProps {
   onSelect: (category: Category) => void;
 }
 
-const CategoriesGrid: React.FC<CategoryModalProps> = ({ categories, onSelect }) => {
+const CategoriesGrid: React.FC<CategoryModalProps> = ({
+  categories,
+  onSelect,
+}) => {
   const [slidesToShow, setSlidesToShow] = useState(6);
 
   // Window width görə slides sayını təyin et
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-      if (width < 640) setSlidesToShow(4);       // mobile
+      if (width < 640) setSlidesToShow(4); // mobile
       else if (width < 1024) setSlidesToShow(5); // tablet
-      else setSlidesToShow(6);                   // desktop
+      else setSlidesToShow(6); // desktop
     };
 
     handleResize();
@@ -55,39 +58,40 @@ const CategoriesGrid: React.FC<CategoryModalProps> = ({ categories, onSelect }) 
   }, []);
 
   const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    adaptiveHeight: true,
-    swipeToSlide: true,
-    slidesToScroll: 1,
-    slidesToShow,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+    dots: false, // Slayderin altında göstərici nöqtələr (pagination dots) göstərilsinmi? (false = göstərilməsin)
+    infinite: true, // Sonsuz dövr (loop) rejimi: sonuncudan sonra birinciyə qayıtsın
+    speed: 500, // Slayd keçidi sürəti (ms ilə) → 500ms = 0.5 saniyə
+    adaptiveHeight: true, // Slaydın hündürlüyü kontentə görə avtomatik uyğunlaşsın
+    swipeToSlide: true, // İstifadəçi barmağı/maus ilə sürüşdürəndə birbaşa həmin slayda keçsin
+    slidesToScroll: 1, // Hər dəfə sürüşəndə neçə slayd keçsin (1 = bir-bir keçsin)
+    slidesToShow, // Eyni anda neçə slayd göstərilsin (dinamik olaraq state-dən gəlir)
+    autoplay: true, // Slaydlar avtomatik keçsin
+    autoplaySpeed: 2000, // Avtomatik keçid sürəti (ms ilə) → 2000ms = 2 saniyə
+    pauseOnHover: true, // Maus üstünə gələndə autoplay dayansın (false etsən, dayanmadan davam edəcək)
+    nextArrow: <NextArrow />, // İrəli (sağ) düyməsi üçün custom arrow komponenti
+    prevArrow: <PrevArrow />, // Geri (sol) düyməsi üçün custom arrow komponenti
   };
 
   return (
     <div className="my-4 rounded w-full mx-auto relative overflow-visible">
       <Slider {...settings}>
         {categories?.map((cat, idx) => (
-        <div
-  key={idx}
-  className={`
+          <div
+            key={idx}
+            className={`
     ${cat.color} flex-none flex flex-col items-center justify-center
     text-center rounded-2xl shadow-md hover:shadow-xl hover:scale-105
     transition transform cursor-pointer
-    h-24 md:h-28 lg:h-32
-    w-28 sm:w-32 md:w-36 lg:w-40
+    h-20 w-28 sm:h-32 sm:w-32 md:h-36 md:w-36 lg:h-40 lg:w-40
     px-2 my-2.5
   `}
-  onClick={() => onSelect(cat)}
->
-  <cat.icon className="text-2xl sm:text-3xl md:text-4xl text-gray-800" />
-  <span className="mt-2 text-[13px] sm:text-sm md:text-base font-semibold text-gray-700 text-center leading-tight break-words">
-    {cat.name}
-  </span>
-</div>
-
+            onClick={() => onSelect(cat)}
+          >
+            <cat.icon className="text-2xl sm:text-3xl md:text-4xl text-gray-800" />
+            <span className="mt-2 text-[12px] sm:text-sm md:text-base font-semibold text-gray-700 text-center leading-tight break-words">
+              {cat.name}
+            </span>
+          </div>
         ))}
       </Slider>
     </div>
