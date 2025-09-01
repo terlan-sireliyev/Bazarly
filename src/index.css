@@ -1,3 +1,51 @@
-
 @import "tailwindcss";
- 
+
+/* Komputer üçün scrollbar dizaynı */
+.max-md\:custom-scrollbar::-webkit-scrollbar {
+  height: 8px;
+  margin-top: 10px; /* burada top offset */
+}
+
+.max-md\:custom-scrollbar::-webkit-scrollbar-track {
+  background: #e0f2fe;
+  border-radius: 9999px;
+  margin-top: 10px; /* track üçün də offset */
+}
+
+.max-md\:custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #0284c7;
+  border-radius: 9999px;
+}
+
+
+/* Mobil və planşetdə scrollbar gizlət */
+.max-md\:hide-scrollbar {
+  -ms-overflow-style: none; /* IE və Edge */
+  scrollbar-width: none; /* Firefox */
+  margin-top: 10px;
+}
+.max-md\:hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+/* Komputer üçün scrollbar dizaynı */
+.md\:custom-scrollbar::-webkit-scrollbar {
+  height: 8px;
+}
+.md\:custom-scrollbar::-webkit-scrollbar-track {
+  background: #e0f2fe; /* Tailwind sky-100 */
+  border-radius: 9999px;
+}
+.md\:custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #0284c7; /* Tailwind sky-600 */
+  border-radius: 9999px;
+}
+.md\:custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #0369a1; /* Tailwind sky-700 */
+}
+
+/* Firefox üçün */
+.md\:custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #0284c7 #e0f2fe;
+}
