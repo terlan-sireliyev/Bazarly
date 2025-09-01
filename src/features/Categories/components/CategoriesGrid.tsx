@@ -45,9 +45,10 @@ const CategoriesGrid = ({ categories, onSelect }: CategoryModalProps) => {
     prevArrow: <PrevArrow />,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 900,
         settings: {
-          slidesToShow: 3,
+          
+          slidesToShow: 5,
           slidesToScroll: 1,
           arrows: true,
         },
@@ -72,7 +73,7 @@ const CategoriesGrid = ({ categories, onSelect }: CategoryModalProps) => {
             className={`
               ${cat.color} flex flex-col items-center justify-center
               text-center h-28 rounded-2xl shadow-md hover:shadow-xl hover:scale-105
-              transition transform cursor-pointer p-2
+              transition transform cursor-pointer 
             `}
             onClick={() => onSelect(cat)}
           >
