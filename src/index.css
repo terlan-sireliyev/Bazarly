@@ -2,6 +2,7 @@
 .slick-track {
   display: flex!important;
   gap: 15px!important;
+  
 }
 
 .slick-slide >div>div{

@@ -70,23 +70,24 @@ const CategoriesGrid: React.FC<CategoryModalProps> = ({ categories, onSelect }) 
     <div className="my-4 rounded w-full mx-auto relative overflow-visible">
       <Slider {...settings}>
         {categories?.map((cat, idx) => (
-          <div
-            key={idx}
-            className={`
-              ${cat.color} flex flex-col items-center justify-center
-              text-center rounded-2xl shadow-md hover:shadow-xl hover:scale-105
-              transition transform cursor-pointer
-              h-10 max-sm:h-24 md:h-30 lg:h-30   // Mobile h-20, tablet h-28, desktop h-32
-              w-24 sm:w-36 md:w-40    // Mobile w-24, tablet w-36, desktop w-40
-              px-2
-            `}
-            onClick={() => onSelect(cat)}
-          >
-            <cat.icon className="text-2xl sm:text-3xl md:text-4xl text-gray-800" />
-            <span className="mt-1 sm:mt-2 text-xs sm:text-sm md:text-base font-semibold text-gray-700 text-center leading-tight">
-              {cat.name}
-            </span>
-          </div>
+        <div
+  key={idx}
+  className={`
+    ${cat.color} flex-none flex flex-col items-center justify-center
+    text-center rounded-2xl shadow-md hover:shadow-xl hover:scale-105
+    transition transform cursor-pointer
+    h-24 md:h-28 lg:h-32
+    w-28 sm:w-32 md:w-36 lg:w-40
+    px-2 my-2.5
+  `}
+  onClick={() => onSelect(cat)}
+>
+  <cat.icon className="text-2xl sm:text-3xl md:text-4xl text-gray-800" />
+  <span className="mt-2 text-[13px] sm:text-sm md:text-base font-semibold text-gray-700 text-center leading-tight break-words">
+    {cat.name}
+  </span>
+</div>
+
         ))}
       </Slider>
     </div>
