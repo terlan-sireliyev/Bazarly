@@ -16,7 +16,7 @@ const NextArrow: React.FC<ArrowProps> = ({ onClick }) => (
     className="absolute  right-[-5px] max-sm:px-8  top-1/2 max-sm:top-[108px] max-sm:rounded-none max-sm:h-6 -translate-y-1/2 bg-green-400 text-white rounded-full w-8 h-8 flex items-center justify-center z-10 hover:bg-blue-600"
     onClick={onClick}
   >
-    {window.innerWidth < 640 ? "Geri" : ">"}
+    {window.innerWidth < 640 ? "İrəli" : ">"}
   </button>
 );
 
@@ -27,7 +27,7 @@ const PrevArrow: React.FC<ArrowProps> = ({ onClick }) => (
     className="absolute left-[-5px] max-sm:px-8 max-sm:top-[108px] max-sm:rounded-none max-sm:h-6  top-1/2 -translate-y-1/2 bg-green-400 text-white rounded-full w-8 h-8 flex items-center justify-center z-10 hover:bg-blue-600"
     onClick={onClick}
   >
-   {window.innerWidth < 640 ? "İrəli" : "<"}
+   {window.innerWidth < 640 ? "Geri" : "<"}
   </button>
 );
 
