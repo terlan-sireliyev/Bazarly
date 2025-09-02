@@ -44,9 +44,9 @@ const Navbar = () => {
   aria-label="toggle menu"
 >
   {menuOpen ? (
-    <FaTimes className="w-6 h-6 sm:w-8 sm:h-8" />
+    <FaTimes className="w-6 h-16 sm:w-8 sm:h-2" />
   ) : (
-    <FaBars className="w-6 h-6 sm:w-8 sm:h-8" />
+    <FaBars className="w-6 h-16 sm:w-8 sm:h-2" />
   )}
 </button>
           </div>
