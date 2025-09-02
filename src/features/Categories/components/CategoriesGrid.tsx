@@ -13,10 +13,10 @@ interface ArrowProps {
 const NextArrow: React.FC<ArrowProps> = ({ onClick }) => (
   <button
     aria-label="Next category"
-    className="absolute right-[-5px] top-1/2 -translate-y-1/2 bg-green-400 text-white rounded-full w-8 h-8 flex items-center justify-center z-10 hover:bg-blue-600"
+    className="absolute  right-[-5px] max-sm:px-8  top-1/2 max-sm:top-[108px] max-sm:rounded-none max-sm:h-6 -translate-y-1/2 bg-green-400 text-white rounded-full w-8 h-8 flex items-center justify-center z-10 hover:bg-blue-600"
     onClick={onClick}
   >
-    &gt;
+    {window.innerWidth < 640 ? "Geri" : ">"}
   </button>
 );
 
@@ -24,10 +24,10 @@ const NextArrow: React.FC<ArrowProps> = ({ onClick }) => (
 const PrevArrow: React.FC<ArrowProps> = ({ onClick }) => (
   <button
     aria-label="Previous category"
-    className="absolute left-[-5px] top-1/2 -translate-y-1/2 bg-green-400 text-white rounded-full w-8 h-8 flex items-center justify-center z-10 hover:bg-blue-600"
+    className="absolute left-[-5px] max-sm:px-8 max-sm:top-[108px] max-sm:rounded-none max-sm:h-6  top-1/2 -translate-y-1/2 bg-green-400 text-white rounded-full w-8 h-8 flex items-center justify-center z-10 hover:bg-blue-600"
     onClick={onClick}
   >
-    &lt;
+   {window.innerWidth < 640 ? "İrəli" : "<"}
   </button>
 );
 
@@ -73,14 +73,14 @@ const CategoriesGrid: React.FC<CategoryModalProps> = ({
   };
 
   return (
-    <div className="my-4 rounded w-full mx-auto relative overflow-visible">
+    <div className="mb-6 rounded w-full mx-auto relative overflow-visible">
       <Slider {...settings}>
         {categories?.map((cat, idx) => (
           <div
             key={idx}
             className={`
     ${cat.color} flex-none flex flex-col items-center justify-center
-    text-center rounded-2xl shadow-md hover:shadow-xl hover:scale-105
+    text-center rounded-2xl shadow-md hover:shadow-xl hover:scale-100.5
     transition transform cursor-pointer
     h-20 w-28 sm:h-32 sm:w-32 md:h-36 md:w-36 lg:h-40 lg:w-40
     px-2 my-2.5

@@ -21,7 +21,7 @@ const NavbarUserActions = () => {
       {/* Sign In */}
       <Link
         to="/login"
-        className={`${!isVisible ? "hidden" : "inline-flex"} px-4 py-1.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition`}
+        className={`${!isVisible ? "hidden" : "inline-flex"} px-4 py-1.5 items-center bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition`}
       >
         <FaSignInAlt className="mr-2" />
         <span>Daxil ol</span>
@@ -31,12 +31,12 @@ const NavbarUserActions = () => {
       <img
         src="https://i.pravatar.cc/40"
         alt="user"
-        className="w-9 h-9 rounded-full border border-gray-300 cursor-pointer"
+        className="w-9 h-9 rounded-full border  border-gray-300 cursor-pointer"
         onClick={() => setIsUserOpen(true)}
       />
 
       {/* Publish */}
-      <button className={`${!isVisibleTwo ? "hidden" : "inline-flex"}    space-x-2 px-4 py-1.5 bg-green-600 text-white rounded-lg hover:bg-green-700 transition`}>
+      <button className={`${!isVisibleTwo ? "hidden" : "inline-flex"}    space-x-2 px-4 py-1.5 bg-green-600 text-white items-center rounded-lg hover:bg-green-700 transition`}>
         <FaPaperPlane />
         <span>Publish</span>
       </button>

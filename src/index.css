@@ -1,7 +1,7 @@
 @import "tailwindcss";
 .slick-track {
   display: flex!important;
-  gap: 15px!important;
+  gap: 8px!important;
   
 }
 

@@ -6,6 +6,7 @@ import {
   Heart,
   Clock,
 } from "lucide-react";
+import CurrencyCard from "../../../components/common/CurrencyCard";
 
 interface AdCardProps {
   category: string;
@@ -28,10 +29,12 @@ const ProductCard = ({
   time,
   user,
   condition,
-  price,
+  
 }: AdCardProps) => {
+  // seçilmiş valyuta
+   
   return (
-    <div className="bg-white   border border-green-100 p-2 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full">
+    <div className="bg-white border border-green-100 p-2 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full">
       {/* Şəkil */}
       <div className="relative h-52">
         <img src={image} alt={title} className="w-full h-full object-cover" />
@@ -96,14 +99,7 @@ const ProductCard = ({
         </div>
 
         {/* Qiymət və düymə */}
-        <div className="flex justify-between max-[900px]:flex-col items-center mt-4 max-md:flex-col max-md:gap-3 max-[900px]:gap-2 max-md:w-full">
-          <span className="bg-red-100 text-red-600 font-bold py-2 px-4 rounded-xl max-md:w-full max-md:text-center max-[900px]:w-full">
-            {price} ₼
-          </span>
-          <button className="bg-green-600 whitespace-nowrap text-white py-2 px-6 rounded-xl hover:bg-green-700 transition max-md:w-full max-[900px]:w-full">
-            Ətraflı bax
-          </button>
-        </div>
+        <CurrencyCard/>
       </div>
     </div>
   );
