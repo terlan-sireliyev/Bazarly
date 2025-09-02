@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FaPaperPlane, FaSignInAlt, FaSearch } from "react-icons/fa";
 import useWindowWidth from "../../../hooks/useWindowWidth";
 import { Link } from "react-router-dom";
-import SearchModal from "../../../features/search/components/SearchModal";         
+import SearchModal from "../../../features/search/components/SearchModal";
 import UserModal from "./components/UserModal";
 
 const NavbarUserActions = () => {
@@ -14,46 +14,49 @@ const NavbarUserActions = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   return (
-    <div className={` flex items-center gap-4`}>
+    <div className="flex items-center gap-3 sm:gap-4">
       {/* Divider */}
-      <div className={`${!isVisible ? "hidden" : "flex"} h-6 w-px bg-gray-300`}></div>
+      {isVisible && <div className="h-6 w-px bg-gray-300" />}
 
       {/* Sign In */}
-      <Link
-        to="/login"
-        className={`${!isVisible ? "hidden" : "inline-flex"} px-4 py-1.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition`}
-      >
-        <FaSignInAlt className="mr-2" />
-        <span>Daxil ol</span>
-      </Link>
+      {isVisible && (
+        <Link
+          to="/login"
+          className="inline-flex items-center gap-2 h-9 sm:h-10 px-3 sm:px-4 text-sm sm:text-base bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+        >
+          <FaSignInAlt className="w-4 h-4 sm:w-5 sm:h-5" />
+          <span>Daxil ol</span>
+        </Link>
+      )}
 
       {/* User Avatar */}
       <img
-  src="https://i.pravatar.cc/40"
-  alt="user"
-  className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-gray-300 cursor-pointer"
-  onClick={() => setIsUserOpen(true)}
-/>
+        src="https://i.pravatar.cc/40"
+        alt="user"
+        className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gray-300 cursor-pointer object-cover"
+        onClick={() => setIsUserOpen(true)}
+      />
 
       {/* Publish */}
-      <button className={`${!isVisibleTwo ? "hidden" : "inline-flex"}    space-x-2 px-4 py-1.5 bg-green-600 text-white rounded-lg hover:bg-green-700 transition`}>
-        <FaPaperPlane />
-        <span>Publish</span>
-      </button>
+      {isVisibleTwo && (
+        <button className="inline-flex items-center gap-2 h-9 sm:h-10 px-3 sm:px-4 text-sm sm:text-base bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+          <FaPaperPlane className="w-4 h-4 sm:w-5 sm:h-5" />
+          <span>Publish</span>
+        </button>
+      )}
 
       {/* Search */}
       <button
-  onClick={() => setIsSearchOpen(true)}
-  className="flex items-center space-x-2 px-2 sm:px-3 py-1 sm:py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition shadow-md hover:shadow-lg text-sm sm:text-base"
->
-  <FaSearch className="w-4 h-4 sm:w-5 sm:h-5 animate-pulse" />
-  <span className="sm:inline">Axtar</span> {/* Mobildə sadəcə ikon */}
-</button>
+        onClick={() => setIsSearchOpen(true)}
+        className="inline-flex items-center gap-2 h-9 sm:h-10 px-2 sm:px-3 text-sm sm:text-base bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition shadow-md hover:shadow-lg"
+      >
+        <FaSearch className="w-4 h-4 sm:w-5 sm:h-5 animate-pulse" />
+        <span className="hidden sm:inline">Axtar</span>
+      </button>
 
       {/* === Modals === */}
       <div className="absolute">
-              <UserModal isOpen={isUserOpen} onClose={() => setIsUserOpen(false)} />
-
+        <UserModal isOpen={isUserOpen} onClose={() => setIsUserOpen(false)} />
       </div>
       <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </div>
