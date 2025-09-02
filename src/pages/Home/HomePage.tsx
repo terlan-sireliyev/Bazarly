@@ -19,15 +19,16 @@ const HomePage = () => {
         {products.map((item, index) => (
           <ProductCard
             key={index}
-            category={item.category}
-            title={item.name}
-            image={item.image}
-            location={`${item.city}`}
-            date={item.date}
+            category={item.category.join(", ")}
+            title={item.title}
+            mainImage={item.mainImage} // Ana səhifə üçün
+            image={item.images[0]} // Single səhifədə ilk şəkil
+            location={item.location.city}
+            date={item.meta.publishedAt}
             time={item.time}
-            user={item.user}
-            condition={item.condition}
             price={item.price}
+            condition={item.condition}
+            user={item.seller.name}
           />
         ))}
       </div>

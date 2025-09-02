@@ -11,6 +11,7 @@ import CurrencyCard from "../../../components/common/CurrencyCard";
 interface AdCardProps {
   category: string;
   title: string;
+  mainImage: string;
   image: string;
   location: string;
   date: string;
@@ -23,7 +24,8 @@ interface AdCardProps {
 const ProductCard = ({
   category,
   title,
-  image,
+  // image,
+  mainImage,
   location,
   date,
   time,
@@ -37,7 +39,7 @@ const ProductCard = ({
     <div className="bg-white border border-green-100 p-2 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full">
       {/* Şəkil */}
       <div className="relative h-52">
-        <img src={image} alt={title} className="w-full h-full object-cover" />
+        <img src={mainImage} alt={title} className="w-full h-full object-cover" />
 
         {/* Bəyən düyməsi */}
         <button className="absolute top-3 right-3 bg-green-100 p-2 rounded-lg shadow-md hover:bg-green-200 transition">
