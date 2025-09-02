@@ -45,7 +45,7 @@ const Navbar = () => {
               {menuOpen ? (
                 <FaTimes className="w-6 h-[80px] sm:w-8 sm:h-16" />
               ) : (
-                <FaBars className="w-6 h-[80px] sm:w-8 sm:h-16" />
+                <FaBars className="  h-10 text-[40px]   sm:h-11" />
               )}
             </button>
           </div>
