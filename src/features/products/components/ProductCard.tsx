@@ -31,16 +31,18 @@ const ProductCard = ({
   time,
   user,
   condition,
-  
 }: AdCardProps) => {
   // seçilmiş valyuta
-   
-  return (
-    <div className="bg-white border border-green-100 p-2 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full">
-      {/* Şəkil */}
-      <div className="relative h-52">
-        <img src={mainImage} alt={title} className="w-full h-full object-cover" />
 
+  return (
+    <div className="bg-white   border  border-green-300 p-2 shadow-md hover:shadow-xl overflow-hidden mt-2 ">
+      {/* Şəkil */}
+      <div className="relative h-52 ">
+        <img
+          src={mainImage}
+          alt={title}
+          className="absolute inset-0 my-6 w-full h-full object-contain bg-white"
+        />
         {/* Bəyən düyməsi */}
         <button className="absolute top-3 right-3 bg-green-100 p-2 rounded-lg shadow-md hover:bg-green-200 transition">
           <Heart className="w-5 h-5 text-green-600" />
@@ -101,7 +103,7 @@ const ProductCard = ({
         </div>
 
         {/* Qiymət və düymə */}
-        <CurrencyCard/>
+        <CurrencyCard />
       </div>
     </div>
   );

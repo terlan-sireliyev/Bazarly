@@ -48,7 +48,7 @@ const NavbarUserActions = () => {
       {/* Search */}
       <button
         onClick={() => setIsSearchOpen(true)}
-        className="inline-flex items-center gap-2 h-9 sm:h-10 px-2 sm:px-3 text-sm sm:text-base bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition shadow-md hover:shadow-lg"
+        className="inline-flex items-center gap-2 h-9 sm:h-10 px-2 sm:px-3 text-sm sm:text-base bg-green-500 text-white rounded-lg   transition shadow-md hover:shadow-lg"
       >
         <FaSearch className="w-4 h-4 sm:w-5 sm:h-5 animate-pulse" />
         <span className="hidden sm:inline">Axtar</span>
