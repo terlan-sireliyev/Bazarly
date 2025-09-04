@@ -1,14 +1,48 @@
 @import "tailwindcss";
+body {
+  overflow-x: hidden;
+}
 .slick-track {
-  display: flex!important;
-  gap: 8px!important;
-  
+  display: flex !important;
+  gap: 8px !important;
 }
 
-.slick-slide >div>div{
-      display: flex!important;
-    justify-content: center!important;
-      padding: 0 8px; /* hər slide arasına boşluq */
-
+/* 500px-dən aşağı ekranlarda */
+@media (max-width: 640px) {
+ .slick-track {
+    gap: 4px !important;
+  }
+  .slick-list {
+    width: 92%;
+    margin: 0 auto !important;
+  }
 }
- 
+
+
+@media (max-width: 510px) {
+ .slick-track {
+    gap: 4px !important;
+  }
+  .slick-list {
+    width: 90%;
+    margin: 0 auto !important;
+  }
+}
+@media (max-width: 450px) {
+ .slick-track {
+    gap: 4px !important;
+  }
+  .slick-list {
+    width: 88%;
+    margin: 0 auto !important;
+  }
+}
+
+
+
+
+.slick-slide > div > div {
+  display: flex !important;
+  justify-content: center !important;
+  padding: 0 8px; /* hər slide arasına boşluq */
+}

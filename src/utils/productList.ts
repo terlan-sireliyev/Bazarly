@@ -34,7 +34,7 @@ export const products = [
     price: 2300,
     time: "14:15",
     condition: "Yeni",
-    mainImage: "https://img5.lalafo.com/i/posters/original_webp/d7/b6/9a/endirim-edildi-dolab-4-qapili-100-azn-unvan-zabrat-2cinar-0590-id-46959688-851609396.webp",
+    mainImage: "https://img5.lalafo.com/i/posters/original_webp/fd/97/e7/dolab-yenidir-id-57223811-833949440.webp",
     images: [
       "https://kontakt.az/media/catalog/product/cache/a404967cc40694dc557cd869288440a4/t/m/tm-dg-sbp-1105-sm-3234_223-1311e7f5.webp",
       "https://kontakt.az/media/catalog/product/cache/a404967cc40694dc557cd869288440a4/t/m/tm-dg-sbp-1105-sm-3234_4444-ed897841.webp",

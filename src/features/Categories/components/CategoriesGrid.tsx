@@ -13,10 +13,12 @@ interface ArrowProps {
 const NextArrow: React.FC<ArrowProps> = ({ onClick }) => (
   <button
     aria-label="Next category"
-    className="absolute  right-[-5px] max-sm:px-8  top-1/2 max-sm:top-[108px] max-sm:rounded-none max-sm:h-6 -translate-y-1/2 bg-green-400 text-white rounded-full w-8 h-8 flex items-center justify-center z-10 hover:bg-blue-600"
+    className="absolute right-[-9px] max-sm:rounded-tl-md 
+  max-sm:rounded-bl-md
+  max-sm:top-[50px] top-1/2 rounded-full -translate-y-1/2 bg-green-400 text-white w-7 h-7 max-sm:h-19  flex items-center justify-center z-10 hover:bg-blue-600"
     onClick={onClick}
   >
-    {window.innerWidth < 640 ? "İrəli" : ">"}
+    {window.innerWidth < 640 ? ">" : ">"}
   </button>
 );
 
@@ -24,10 +26,13 @@ const NextArrow: React.FC<ArrowProps> = ({ onClick }) => (
 const PrevArrow: React.FC<ArrowProps> = ({ onClick }) => (
   <button
     aria-label="Previous category"
-    className="absolute left-[-5px] max-sm:px-8 max-sm:top-[108px] max-sm:rounded-none max-sm:h-6  top-1/2 -translate-y-1/2 bg-green-400 text-white rounded-full w-8 h-8 flex items-center justify-center z-10 hover:bg-blue-600"
+    className="absolute 
+    max-sm:rounded-tr-md 
+    max-sm:rounded-br-md
+ left-[-9px] sm:rounded-full rounded-full  max-sm:top-[50px]    top-1/2 -translate-y-1/2 bg-green-400 text-white w-7 h-7 max-sm:h-19  flex items-center justify-center z-10 hover:bg-blue-600"
     onClick={onClick}
   >
-   {window.innerWidth < 640 ? "Geri" : "<"}
+    {window.innerWidth < 640 ? "<" : "<"}
   </button>
 );
 
@@ -65,8 +70,8 @@ const CategoriesGrid: React.FC<CategoryModalProps> = ({
     swipeToSlide: true, // İstifadəçi barmağı/maus ilə sürüşdürəndə birbaşa həmin slayda keçsin
     slidesToScroll: 1, // Hər dəfə sürüşəndə neçə slayd keçsin (1 = bir-bir keçsin)
     slidesToShow, // Eyni anda neçə slayd göstərilsin (dinamik olaraq state-dən gəlir)
-    autoplay: true, // Slaydlar avtomatik keçsin
-    autoplaySpeed: 2000, // Avtomatik keçid sürəti (ms ilə) → 2000ms = 2 saniyə
+    // autoplay: true, // Slaydlar avtomatik keçsin
+    // autoplaySpeed: 2000, // Avtomatik keçid sürəti (ms ilə) → 2000ms = 2 saniyə
     pauseOnHover: true, // Maus üstünə gələndə autoplay dayansın (false etsən, dayanmadan davam edəcək)
     nextArrow: <NextArrow />, // İrəli (sağ) düyməsi üçün custom arrow komponenti
     prevArrow: <PrevArrow />, // Geri (sol) düyməsi üçün custom arrow komponenti
