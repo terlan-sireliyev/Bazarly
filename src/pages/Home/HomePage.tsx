@@ -4,14 +4,21 @@ import Categories from "../../features/Categories/components/Categories";
 import { useState } from "react";
 
 const HomePage = () => {
-  const [activeTab, setActiveTab] = useState<"all" | "vip" | "premium" | "sadə">("all");
+  const [activeTab, setActiveTab] = useState<
+    "all" | "vip" | "premium" | "sadə"
+  >("all");
 
   const filteredProducts =
     activeTab === "all"
       ? products
       : products.filter((p) => p.status === activeTab);
 
-  const tabs: ("all" | "premium" | "vip" | "sadə")[] = ["all", "premium", "vip", "sadə"];
+  const tabs: ("all" | "premium" | "vip" | "sadə")[] = [
+    "all",
+    "premium",
+    "vip",
+    "sadə",
+  ];
 
   return (
     <main className="max-w-7xl mx-auto my-4 px-2 sm:px-2">
@@ -32,7 +39,7 @@ const HomePage = () => {
             {tab === "all"
               ? "Bütün elanlar"
               : tab === "sadə"
-              ? "Adi" 
+              ? "Adi"
               : tab.charAt(0).toUpperCase() + tab.slice(1).toLowerCase()}
           </button>
         ))}
@@ -51,6 +58,7 @@ const HomePage = () => {
       >
         {filteredProducts.map((item, index) => (
           <ProductCard
+          id={item.id}
             key={index}
             category={item.category[0]}
             status={item.status}
