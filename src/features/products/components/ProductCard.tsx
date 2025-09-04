@@ -1,5 +1,5 @@
 import {
-  MapPin,
+  // MapPin,
   Calendar,
   Package,
   Bookmark,
@@ -26,7 +26,7 @@ const ProductCard = ({
   category,
   title,
   mainImage,
-  location,
+  // location,
   date,
   time,
   user,
@@ -50,7 +50,7 @@ const ProductCard = ({
       : "bg-gray-300 text-gray-700";
 
   return (
-    <div className="bg-white border border-green-300 mt-2 rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden flex flex-col">
+    <div className="bg-white border border-green-300 mt-2 rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden flex  flex-col">
       {/* Şəkil və Badge-lər */}
       <div className="relative h-52 w-full">
         <img
@@ -90,7 +90,7 @@ const ProductCard = ({
             <p className="text-gray-700 font-medium text-sm">
               {user.split(" ")[0]} {user.split(" ")[1]?.charAt(0)}.
             </p>
-            <p className="text-gray-400 text-xs">{category}</p>
+            <p className="text-gray-400 text-xs"> {category}</p>
           </div>
         </div>
         <button className="p-2 rounded-full bg-green-50 hover:bg-green-100 shadow">
@@ -109,22 +109,27 @@ const ProductCard = ({
       </div>
 
       {/* Details Grid */}
-      <div className="px-4 py-3 grid grid-cols-2 gap-2 text-gray-500 text-sm">
-        <div className="flex items-center gap-2">
-          <MapPin className="w-4 h-4" />
-          <span>{location}</span>
+      <div className="px-4 py-3 flex justify-between gap-2  text-gray-500 text-sm">
+        <div className="flex flex-col gap-2">
+          <div className="flex items-center gap-2">
+            <Clock className="w-4 h-4" />
+            <span>{time}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Package className="w-4 h-4" />
+            <span>{condition}</span>
+          </div>
         </div>
-        <div className="flex items-center gap-2">
-          <Package className="w-4 h-4" />
-          <span>{condition}</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <Calendar className="w-4 h-4" />
-          <span>{date}</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <Clock className="w-4 h-4" />
-          <span>{time}</span>
+        <div className="flex flex-col gap-2">
+          <div className="flex items-center gap-2">
+            <Calendar className="w-4 h-4" />
+            <span>{date}</span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <Package className="w-4 h-4" />
+            <span>{condition}</span>
+          </div>
         </div>
       </div>
 

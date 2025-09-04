@@ -19,7 +19,7 @@ const HomePage = () => {
         {products.map((item, index) => (
           <ProductCard
             key={index}
-            category={item.category.join(", ")}
+            category={item.category[0]}
             status={item.status}
             title={item.title}
             mainImage={item.mainImage} // Ana səhifə üçün

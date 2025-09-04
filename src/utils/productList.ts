@@ -2,7 +2,7 @@ export const products = [
   {
     id: "P100001",
     title: "iPhone 13 128 GB Midnight",
-    category: ["Elektronika", "Telefonlar", "Samsung"],
+    category: ["Avtomobil", "Telefonlar", "Samsung"],
     price: 2450,
     time: "12:30",
     condition: "Yeni",
@@ -30,7 +30,7 @@ export const products = [
   {
     id: "P100002",
     title: "Xiaomi Redmi Note 14 6/128 GB Midnight Black",
-    category: ["Elektronika", "Telefonlar", "Apple"],
+    category: ["Mebel", "Telefonlar", "Apple"],
     price: 2300,
     time: "14:15",
     condition: "Yeni",
