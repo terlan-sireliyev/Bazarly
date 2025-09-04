@@ -20,9 +20,10 @@ const HomePage = () => {
           <ProductCard
             key={index}
             category={item.category.join(", ")}
+            status={item.status}
             title={item.title}
             mainImage={item.mainImage} // Ana səhifə üçün
-            image={item.images[0]} // Single səhifədə ilk şəkil
+            // image={item.images[0]} // Single səhifədə ilk şəkil
             location={item.location.city}
             date={item.meta.publishedAt}
             time={item.time}

@@ -1,0 +1,1 @@
+export const currencies = ["₼ AZN", "$ USD", "€ EUR","Br BYN", "₽ RUB"];

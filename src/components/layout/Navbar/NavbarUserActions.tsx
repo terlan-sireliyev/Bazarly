@@ -39,10 +39,13 @@ const NavbarUserActions = () => {
 
       {/* Publish */}
       {isVisibleTwo && (
-        <button className="inline-flex items-center gap-2 h-9 sm:h-10 px-3 sm:px-4 text-sm sm:text-base bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+        <Link
+          to={"publish"}
+          className="inline-flex items-center gap-2 h-9 sm:h-10 px-3 sm:px-4 text-sm sm:text-base bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+        >
           <FaPaperPlane className="w-4 h-4 sm:w-5 sm:h-5" />
           <span>Publish</span>
-        </button>
+        </Link>
       )}
 
       {/* Search */}
@@ -58,7 +61,10 @@ const NavbarUserActions = () => {
       <div className="absolute">
         <UserModal isOpen={isUserOpen} onClose={() => setIsUserOpen(false)} />
       </div>
-      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+      <SearchModal
+        isOpen={isSearchOpen}
+        onClose={() => setIsSearchOpen(false)}
+      />
     </div>
   );
 };
