@@ -2,8 +2,23 @@ import  { useState } from "react";
 import PropTypes from "prop-types";
 import { CiBookmark } from "react-icons/ci";
 import { FaBookmark, FaHeart, FaRegCopy, FaRegFlag, FaRegHeart, FaShareAlt } from "react-icons/fa";
+interface AdMeta {
+  views: number;
+  publishedAt: string;
+  updatedAt: string;
+  tags: string[];
+}
 
-const HeaderTitleMeta = ({ ad }) => {
+interface Ad {
+  title: string;
+  id: string | number;
+  meta: AdMeta;
+}
+
+interface HeaderTitleMetaProps {
+  ad: Ad;
+}
+const HeaderTitleMeta = ({ ad }:HeaderTitleMetaProps) => {
   const [like, setLike] = useState(false);
   const [save, setSave] = useState(false);
 

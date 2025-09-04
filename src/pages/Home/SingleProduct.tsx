@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import { FaHeart, FaRegHeart, FaRegCopy, FaShareAlt, FaRegFlag } from "react-icons/fa";
+import {
+  FaHeart,
+  FaRegHeart,
+  FaRegCopy,
+  FaShareAlt,
+  FaRegFlag,
+} from "react-icons/fa";
 import { FaBookmark } from "react-icons/fa";
 import { CiBookmark } from "react-icons/ci";
 import { products } from "../../utils/productList";
@@ -26,11 +32,17 @@ const SingleProduct: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center  ">
           {/* Left side */}
           <div>
-            <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">{ad.title}</h1>
+            <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">
+              {ad.title}
+            </h1>
             <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-gray-500">
-              <span>Elan ID: <b className="text-gray-700">{ad.id}</b></span>
+              <span>
+                Elan ID: <b className="text-gray-700">{ad.id}</b>
+              </span>
               <span>•</span>
-              <span>Baxış: <b className="text-gray-700">{ad.meta.views}</b></span>
+              <span>
+                Baxış: <b className="text-gray-700">{ad.meta.views}</b>
+              </span>
               <span>•</span>
               <span>Dərc: {ad.meta.publishedAt}</span>
               <span>•</span>
@@ -38,7 +50,10 @@ const SingleProduct: React.FC = () => {
             </div>
             <div className="mt-3 flex flex-wrap gap-2">
               {ad.meta.tags.map((t) => (
-                <span key={t} className="rounded-full border bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700">
+                <span
+                  key={t}
+                  className="rounded-full border bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700"
+                >
                   #{t}
                 </span>
               ))}
@@ -67,15 +82,24 @@ const SingleProduct: React.FC = () => {
               <span>{save ? "Saved" : "Save"}</span>
             </button>
 
-            <button className="flex items-center gap-2 rounded-xl border px-3 py-2 text-sm hover:bg-gray-50" title="Linki kopyala">
-              <FaRegCopy />  
+            <button
+              className="flex items-center gap-2 rounded-xl border px-3 py-2 text-sm hover:bg-gray-50"
+              title="Linki kopyala"
+            >
+              <FaRegCopy />
             </button>
 
-            <button className="flex items-center gap-2 rounded-xl border px-3 py-2 text-sm hover:bg-gray-50" title="Paylaş">
+            <button
+              className="flex items-center gap-2 rounded-xl border px-3 py-2 text-sm hover:bg-gray-50"
+              title="Paylaş"
+            >
               <FaShareAlt /> Paylaş
             </button>
 
-            <button className="flex items-center gap-2 rounded-xl border px-3 py-2 text-sm hover:bg-gray-50" title="Şikayət et">
+            <button
+              className="flex items-center gap-2 rounded-xl border px-3 py-2 text-sm hover:bg-gray-50"
+              title="Şikayət et"
+            >
               <FaRegFlag /> Şikayət
             </button>
           </div>
@@ -103,7 +127,9 @@ const SingleProduct: React.FC = () => {
                   key={index}
                   onClick={() => setActiveImg(index)}
                   className={`border rounded-lg overflow-hidden transition-transform duration-200 ${
-                    activeImg === index ? "ring-2 ring-blue-500" : "hover:scale-105"
+                    activeImg === index
+                      ? "ring-2 ring-blue-500"
+                      : "hover:scale-105"
                   }`}
                 >
                   <img
@@ -119,20 +145,26 @@ const SingleProduct: React.FC = () => {
           {/* Right: Product Info */}
           <div className="flex-1 space-y-4">
             <h1 className="text-3xl font-bold text-gray-800">{ad.title}</h1>
-            <p className="text-xl font-semibold text-green-600">{ad.price} AZN</p>
+            <p className="text-xl font-semibold text-green-600">
+              {ad.price} AZN
+            </p>
 
             <div className="space-y-2">
               <p className="text-gray-700">
-                <span className="font-semibold">Brand:</span> {ad.specs.brand || "N/A"}
+                <span className="font-semibold">Brand:</span>{" "}
+                {ad.specs.brand || "N/A"}
               </p>
               <p className="text-gray-700">
-                <span className="font-semibold">Model:</span> {ad.specs.model || "N/A"}
+                <span className="font-semibold">Model:</span>{" "}
+                {ad.specs.model || "N/A"}
               </p>
               <p className="text-gray-700">
-                <span className="font-semibold">Condition:</span> {ad.condition || "N/A"}
+                <span className="font-semibold">Condition:</span>{" "}
+                {ad.condition || "N/A"}
               </p>
               <p className="text-gray-700">
-                <span className="font-semibold">Color:</span> {ad.specs.color || "N/A"}
+                <span className="font-semibold">Color:</span>{" "}
+                {ad.specs.color || "N/A"}
               </p>
             </div>
 
