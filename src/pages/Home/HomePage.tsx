@@ -21,11 +21,11 @@ const HomePage = () => {
   ];
 
   return (
-    <main className="max-w-7xl mx-auto my-4 px-2 sm:px-2">
+    <main className="max-w-7xl mx-auto my-2 px-2 sm:px-2">
       <Categories />
 
       {/* Tab menyu */}
-      <div className="flex gap-3 mt-4">
+      <div className="flex gap-3  ">
         {tabs.map((tab) => (
           <button
             key={tab}

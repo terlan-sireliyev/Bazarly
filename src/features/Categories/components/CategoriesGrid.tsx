@@ -78,7 +78,7 @@ const CategoriesGrid: React.FC<CategoryModalProps> = ({
   };
 
   return (
-    <div className="mb-6 rounded w-full mx-auto relative overflow-visible">
+    <div className="mb-2 rounded w-full mx-auto relative overflow-visible">
       <Slider {...settings}>
         {categories?.map((cat, idx) => (
           <div
