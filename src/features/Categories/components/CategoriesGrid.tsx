@@ -13,9 +13,9 @@ interface ArrowProps {
 const NextArrow: React.FC<ArrowProps> = ({ onClick }) => (
   <button
     aria-label="Next category"
-    className="absolute right-[-9px] max-sm:rounded-tl-md 
-  max-sm:rounded-bl-md
-  max-sm:top-[50px] top-1/2 rounded-full -translate-y-1/2 bg-green-400 text-white w-7 h-7 max-sm:h-19  flex items-center justify-center z-10 hover:bg-blue-600"
+    className="absolute right-[-9px] max-xl:rounded-tl-md 
+  max-xl:rounded-bl-md
+  max-sm:top-[50px] top-1/2 rounded-full -translate-y-1/2 bg-green-400 text-white w-7 h-7 max-sm:h-19 max-md:h-30 max-lg:h-35  max-xl:h-40  flex items-center justify-center z-10 hover:bg-blue-600"
     onClick={onClick}
   >
     {window.innerWidth < 640 ? ">" : ">"}
@@ -27,9 +27,9 @@ const PrevArrow: React.FC<ArrowProps> = ({ onClick }) => (
   <button
     aria-label="Previous category"
     className="absolute 
-    max-sm:rounded-tr-md 
-    max-sm:rounded-br-md
- left-[-9px] sm:rounded-full rounded-full  max-sm:top-[50px]    top-1/2 -translate-y-1/2 bg-green-400 text-white w-7 h-7 max-sm:h-19  flex items-center justify-center z-10 hover:bg-blue-600"
+    max-xl:rounded-tr-md 
+    max-xl:rounded-br-md
+ left-[-9px]   rounded-full  max-sm:top-[50px]    top-1/2 -translate-y-1/2 bg-green-400 text-white w-7 h-7 max-sm:h-19 max-md:h-30 max-lg:h-35  max-xl:h-40 flex items-center justify-center z-10 hover:bg-blue-600"
     onClick={onClick}
   >
     {window.innerWidth < 640 ? "<" : "<"}

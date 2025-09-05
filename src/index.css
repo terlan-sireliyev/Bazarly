@@ -7,6 +7,16 @@ body {
   gap: 8px !important;
 }
 
+@media (max-width: 1024px) {
+ .slick-track {
+    gap: 6px !important;
+  }
+  .slick-list {
+    width: 96%;
+    margin: 0 auto !important;
+  }
+}
+
 /* 500px-dən aşağı ekranlarda */
 @media (max-width: 640px) {
  .slick-track {
@@ -22,9 +32,11 @@ body {
 @media (max-width: 510px) {
  .slick-track {
     gap: 4px !important;
+    /* width: 2980px!important; */
+    
   }
   .slick-list {
-    width: 90%;
+    width: 92%;
     margin: 0 auto !important;
   }
 }
