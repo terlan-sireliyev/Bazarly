@@ -31,7 +31,7 @@ export const products = [
     id: "P100002",
     title: "Xiaomi Redmi Note 14 6/128 GB Midnight Black",
     category: ["Mebel", "Telefonlar", "Apple"],
-    price: 2300,
+    price: 1000,
     time: "14:15",
     condition: "Yeni",
     mainImage: "https://img5.lalafo.com/i/posters/original_webp/fd/97/e7/dolab-yenidir-id-57223811-833949440.webp",

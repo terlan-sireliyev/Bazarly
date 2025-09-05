@@ -35,6 +35,7 @@ const ProductCard = ({
   user,
   status,
   condition,
+  price,
   adType = "Sadə",
 }: AdCardProps) => {
   // Badge rəngləri
@@ -139,7 +140,7 @@ const ProductCard = ({
       </Link>
       {/* Currency & Footer */}
       <div className="px-4 pb-4">
-        <CurrencyCard />
+        <CurrencyCard price={price}  />
       </div>
     </div>
   );
