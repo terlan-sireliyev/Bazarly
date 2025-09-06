@@ -19,7 +19,7 @@ const CategoriesGrid: React.FC<CategoryModalProps> = ({ categories, onSelect }) 
       const width = window.innerWidth;
 
       if (width < 640) {
-        setSlidesToShow(5); // mobil
+        setSlidesToShow(4); // mobil
         setIsDesktop(false);
       } else if (width < 1024) {
         setSlidesToShow(6); // tablet
@@ -49,22 +49,28 @@ const CategoriesGrid: React.FC<CategoryModalProps> = ({ categories, onSelect }) 
       {/* Slider */}
       <Slider ref={sliderRef} {...settings}>
         {categories?.map((cat, idx) => (
-          <div
-            key={idx}
-            className={`
-              ${cat.color} flex-none flex flex-col items-center justify-center
-              text-center rounded-2xl shadow-md hover:shadow-xl hover:scale-105
-              transition transform cursor-pointer
-              h-20 w-28 sm:h-26 sm:w-32 md:h-26 md:w-36 lg:h-40 lg:w-40
-              px-2 my-2.5
-            `}
-            onClick={() => onSelect(cat)}
-          >
-            <cat.icon className="text-2xl sm:text-3xl md:text-4xl text-gray-800" />
-            <span className="mt-2 text-[12px] sm:text-sm md:text-base font-semibold text-gray-700 text-center leading-tight break-words">
-              {cat.name}
-            </span>
-          </div>
+           <div
+  key={idx}
+  className={`
+    ${cat.color} flex-none flex flex-col items-center
+    text-center rounded-2xl shadow-md hover:shadow-xl hover:scale-105
+    transition transform cursor-pointer
+    h-20 w-28 sm:h-26 max-sm:h-20 sm:w-32 md:h-26 md:w-36 lg:h-40 lg:w-40
+    px-2 my-2.5
+  `}
+  onClick={() => onSelect(cat)}
+>
+  <div className="flex flex-col m-auto items-center max-lg:m-0 max-md:mt-2 max-sm:mt-0  ">
+    {/* Icon həmişə yuxarıda qalsın */}
+  <cat.icon className="mt-2 text-2xl sm:text-3xl md:text-4xl text-gray-800" />
+
+  {/* Text iconun altında sərbəst uzansın */}
+  <span className="mt-2 text-[12px]   sm:text-sm md:text-base font-semibold text-gray-700 text-center    ">
+    {cat.name}
+  </span>
+  </div>
+</div>
+
         ))}
       </Slider>
 
