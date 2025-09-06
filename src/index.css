@@ -58,3 +58,29 @@ body {
   justify-content: center !important;
   padding: 0 8px; /* hər slide arasına boşluq */
 }
+
+/* react-slick dots */
+.custom-dots {
+  bottom: 10px; /* dots hündürlüyünü tənzimləmək üçün */
+}
+
+.custom-dots li {
+  margin: 0 4px;
+}
+
+.custom-dots li button {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-dots li.slick-active button {
+  background: #3b82f6; /* active rəng */
+  color: #fff;
+  border-color: #3b82f6;
+}
