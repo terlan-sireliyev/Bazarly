@@ -22,10 +22,10 @@ const CategoriesGrid: React.FC<CategoryModalProps> = ({ categories, onSelect }) 
         setSlidesToShow(5); // mobil
         setIsDesktop(false);
       } else if (width < 1024) {
-        setSlidesToShow(4); // tablet
+        setSlidesToShow(6); // tablet
         setIsDesktop(false);
       } else {
-        setSlidesToShow(5); // desktop
+        setSlidesToShow(7); // desktop
         setIsDesktop(true);
       }
     };
@@ -55,7 +55,7 @@ const CategoriesGrid: React.FC<CategoryModalProps> = ({ categories, onSelect }) 
               ${cat.color} flex-none flex flex-col items-center justify-center
               text-center rounded-2xl shadow-md hover:shadow-xl hover:scale-105
               transition transform cursor-pointer
-              h-20 w-28 sm:h-32 sm:w-32 md:h-36 md:w-36 lg:h-40 lg:w-40
+              h-20 w-28 sm:h-26 sm:w-32 md:h-26 md:w-36 lg:h-40 lg:w-40
               px-2 my-2.5
             `}
             onClick={() => onSelect(cat)}
