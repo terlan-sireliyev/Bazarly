@@ -133,7 +133,7 @@ const SingleProduct: React.FC = () => {
           {/* Şəkillər + xüsusiyyətlər */}
           <div className="lg:col-span-2  ">
             {/* Şəkillər slider */}
-            <div className="bg-white rounded-xl max-sm:rounded-none shadow-md p-2">
+            <div className="bg-white rounded-xl max-lg:rounded-none shadow-md p-2">
               <SinglePageSlider
                 images={images}
                 activeImg={activeImg}
