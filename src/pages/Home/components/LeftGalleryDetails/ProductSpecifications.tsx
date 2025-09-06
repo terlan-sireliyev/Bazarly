@@ -22,8 +22,8 @@ interface ProductSpecificationsProps {
 }
 const ProductSpecifications = ({ad}:ProductSpecificationsProps) => {
   return (
-    <section className="rounded-2xl bg-white p-6 shadow mt-4">
-  <h2 className="text-lg font-bold text-gray-800 mb-6">
+    <section className="sm:rounded-2xl bg-white p-2 shadow  ">
+  <h2 className="text-lg font-bold text-gray-800 mb-4">
     Məhsulun xüsusiyyətləri
   </h2>
 

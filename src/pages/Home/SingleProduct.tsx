@@ -1,6 +1,5 @@
 import React, { useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
-import Slider from "react-slick";
 
 import {
   FaHeart,
@@ -15,6 +14,7 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { products } from "../../utils/productList";
 import PriceCard from "./components/RightSellerActions/PriceCard";
 import ProductSpecifications from "./components/LeftGalleryDetails/ProductSpecifications";
+import SinglePageSlider from "../../components/slider/SinglePageSlider";
 
 const SingleProduct: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -33,16 +33,7 @@ const SingleProduct: React.FC = () => {
 
   if (!ad) return <div className="p-8 text-red-500">Məhsul tapılmadı</div>;
 
-  // Slider settings - dots əvəzinə rəqəmlər göstərilir
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    afterChange: (current: number) => setActiveImg(current),
-    
-  };
+  
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
@@ -140,30 +131,15 @@ const SingleProduct: React.FC = () => {
         {/* Main grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Şəkillər + xüsusiyyətlər */}
-          <div className="lg:col-span-2 space-y-2">
+          <div className="lg:col-span-2  ">
             {/* Şəkillər slider */}
             <div className="bg-white rounded-xl max-sm:rounded-none shadow-md p-2">
-              <figure className="w-full h-[500px] max-sm:h-[270px] flex flex-col items-center justify-center bg-gray-100 rounded-lg relative">
-                <Slider {...settings} className="w-full h-full">
-                  {images.map((img, idx) => (
-                    <div
-                      key={idx}
-                      className="flex items-center justify-center h-full"
-                    >
-                      <img
-                        src={img}
-                        alt={`${ad.title} məhsulu şəkil ${idx + 1}`}
-                        className="max-h-[480px] max-sm:h-[270px] object-contain mx-auto"
-                      />
-                    </div>
-                  ))}
-                </Slider>
-
-                {/* Əlavə: aktiv şəkil / ümumi şəkil */}
-                <div className="absolute bottom-2 right-2 bg-black/50 text-white text-sm px-3 py-1 rounded-full font-semibold">
-                  {activeImg + 1} / {images.length}
-                </div>
-              </figure>
+              <SinglePageSlider
+                images={images}
+                activeImg={activeImg}
+                setActiveImg={setActiveImg}
+                productTitle={ad.title}
+              />
             </div>
 
             {/* Qiymət kartı – mobil üçün şəkildən sonra */}
