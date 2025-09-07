@@ -20,7 +20,7 @@ const SimilarProducts: React.FC<SimilarProductsProps> = ({
   );
 
   if (similarProducts.length === 0) return null;
-
+// console.log(similarProducts)
   return (
     <div className="my-8">
       <h2 className="text-2xl font-bold mb-6 ml-2 text-gray-800">Oxşar Məhsullar</h2>
