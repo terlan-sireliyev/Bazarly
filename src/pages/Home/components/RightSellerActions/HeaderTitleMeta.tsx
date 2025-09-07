@@ -38,7 +38,7 @@ const HeaderTitleMeta = ({ ad }: HeaderTitleMetaProps) => {
           {/* Məhsul başlığı */}
           <h1
             onClick={() => setOpen((s) => !s)} // Click ilə açılıb-bağlanır
-            className="relative py-2 text-2xl sm:text-3xl max-sm:text-[14px] max-sm:line-clamp-1 font-extrabold text-gray-900 cursor-pointer hover:text-blue-600 transition-colors"
+            className="relative py-2 text-2xl sm:text-3xl max-sm:text-[15px] max-sm:line-clamp-1 font-extrabold text-gray-900 cursor-pointer hover:text-blue-600 transition-colors"
           >
             {ad.title}
             <span className="absolute right-0 top-1/2 -translate-y-1/2">

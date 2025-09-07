@@ -7,6 +7,9 @@ import PriceCard from "./components/RightSellerActions/PriceCard";
 import ProductSpecifications from "./components/LeftGalleryDetails/ProductSpecifications";
 import SinglePageSlider from "../../components/slider/SinglePageSlider";
 import HeaderTitleMeta from "./components/RightSellerActions/HeaderTitleMeta";
+import SellerCard from "./components/RightSellerActions/SellerCard";
+import LocationList from "./components/RightSellerActions/LocationList";
+import SimilarProducts from "./components/LeftGalleryDetails/SimilarProducts";
 
 const SingleProduct: React.FC = () => {
   // URL-dən id götürürük
@@ -34,7 +37,7 @@ const SingleProduct: React.FC = () => {
         <HeaderTitleMeta ad={ad} />
 
         {/* Main grid – şəkillər + sağ tərəf */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-6 ">
           {/* Şəkillər + məhsul xüsusiyyətləri */}
           <div className="lg:col-span-2">
             {/* Şəkillər slider */}
@@ -53,17 +56,35 @@ const SingleProduct: React.FC = () => {
                 <PriceCard ad={ad} />
               </div>
             </div>
-
+            {/* SellerCard – mobil üçün */}
+            <div className="block lg:hidden ">
+              <div className="bg-white shadow-lg hover:shadow-xl  ">
+                <SellerCard />
+              </div>
+            </div>
             {/* Məhsul xüsusiyyətləri */}
             <ProductSpecifications ad={ad} />
+            <SimilarProducts
+              currentProductId={ad.id}
+              currentCategories={ad.category}
+            />
           </div>
 
           {/* Qiymət kartı – yalnız desktop üçün sağ tərəfdə */}
           <aside className="hidden lg:block space-y-6">
-            <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition p-6 sticky top-6">
+            <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition p-6 ">
               <PriceCard ad={ad} />
             </div>
+
+            <SellerCard />
+            <LocationList />
           </aside>
+
+          <div className="block lg:hidden ">
+            <div className="bg-white shadow-lg hover:shadow-xl  ">
+              <LocationList />
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -1,8 +1,8 @@
 export const products = [
   {
     id: "P100001",
-    title: "iPhone 13 128 GB Midnight",
-    category: ["Avtomobil", "Telefonlar", "Samsung"],
+    title: "iPhone 13 128 GB Midnight meb",
+    category: ["Mebel"],
     price: 2450,
     time: "12:30",
     condition: "Yeni",
@@ -29,8 +29,8 @@ export const products = [
   },
   {
     id: "P100002",
-    title: "Xiaomi Redmi Note 14 6/128 GB Midnight Black",
-    category: ["Mebel", "Telefonlar", "Apple"],
+    title: "Xiaomi Redmi Note 14 6/128 GB Midnight Black meb",
+    category: ["Mebel"],
     price: 1000,
     time: "14:15",
     condition: "Yeni",
@@ -58,8 +58,8 @@ export const products = [
   },
   {
     id: "P100003",
-    title: "iPhone 16 Pro Max 256 GB Black Titanium",
-    category: ["Elektronika", "Telefonlar", "Xiaomi"],
+    title: "iPhone 16 Pro Max 256 GB Black Titanium meb",
+    category: ["Mebel"],
     price: 700,
     time: "09:40",
     condition: "Yeni",
@@ -142,9 +142,9 @@ export const products = [
     status: "sadə",
   },
   {
-    id: "P100003",
+    id: "P100006",
     title: "MacBook Pro 14-inch M2 Pro 16/512 GB",
-    category: ["Elektronika", "Noutbuklar", "Apple"],
+    category: ["Elektronika"],
     price: 5200,
     time: "09:30",
     condition: "Yeni",
@@ -169,7 +169,7 @@ export const products = [
     status: "premium",
   },
   {
-    id: "P100005",
+    id: "P100007",
     title: "iPad Pro 12.9-inch M2 256 GB Silver",
     category: ["Elektronika", "Planşetlər", "Apple"],
     price: 3200,
@@ -195,7 +195,7 @@ export const products = [
     status: "vip",
   },
   {
-    id: "P100006",
+    id: "P100008",
     title: "Samsung Galaxy S23 Ultra 12/256 GB Green",
     category: ["Elektronika", "Telefonlar", "Samsung"],
     price: 2899,
@@ -224,7 +224,7 @@ export const products = [
     status: "premium",
   },
   {
-    id: "P100011",
+    id: "P10009",
     title: "iPhone 13 128 GB Blue",
     category: ["Elektronika", "Telefonlar", "Apple"],
     price: 1499,
@@ -252,7 +252,7 @@ export const products = [
     status: "vip",
   },
   {
-    id: "P100011",
+    id: "P100010",
     title: "iPad Pro 12.9-inch (5th Gen) 128 GB Space Gray",
     category: ["Elektronika", "Planşetlər", "Apple"],
     price: 3500,
