@@ -26,7 +26,6 @@ const HomePage = () => {
       <Categories />
 
       {/* Tab menyu */}
-      {/* Tab menyu */}
 <div className="flex gap-4 border-b border-gray-300 mt-4 mb-6">
   {tabs.map((tab) => (
     <button
